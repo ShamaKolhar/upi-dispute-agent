@@ -18,10 +18,10 @@ def ask_claude(prompt, max_tokens=200):
         )
     except AuthenticationError:
         print("Error: your API key is wrong or missing. Check the .env file.")
-        return
+        return None
     except APIConnectionError:
         print("Error: could not reach Claude. Check your internet connection.")
-        return
+        return None
     except RateLimitError:
         print("Error: too many requests. Wait a moment and try again.")
         return None
